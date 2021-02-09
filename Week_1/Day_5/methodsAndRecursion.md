@@ -35,7 +35,30 @@ console.log('Hello,',fullName());
 
 # A Note About `this`
 
-* arrow functions do not bind.
+* arrow functions do not bind .this - it is lexically determined - which is intentional.
 * this may be different each time because it is determined by how a function is called (runtime binding)
 * in the example of a assigning a function  as value to an object - .this will refer to the object.
 * the global context of .this is the window in a browser, and globalThis in node.
+
+
+# A  Quick Note About Recusion
+Some facts about recursion:
+* any problem you solve with a for loop you can solve with recursion.
+* every recursive function has a recursive case that causes the function to call itself
+* every recursive function has at least one base case that causes the function to stop calling itself.
+* a function that calls itself recursively without a base case would repeat forever
+
+Some special language around recursion, from the below example:
+
+```javascript
+function countEvenToTwelve(number) {
+  if (number <= 12) {
+    console.log(number);
+    countEvenToTwelve(number+2);
+  }
+}
+countEvenToTwelve(0);
+```
+
+* `number <= 12` is called the recursive case
+* `number > 12` is refered to as a base case. When a base case is true the function will no longer call itself.
