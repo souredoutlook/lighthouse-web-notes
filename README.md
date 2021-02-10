@@ -11,3 +11,5 @@ This repository contains all of the notes taken by [Nicholas Meisenheimer](https
   * [Weekend](/Week_1/WE)
 * [Week 2](/Week_2)
   * [Day 1](/Week_2/Day_1)
+  * [Day 2](/Week_2/Day_2)
+  * [Day 3](/Week_3/Day_3)
