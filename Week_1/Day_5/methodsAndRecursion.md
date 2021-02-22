@@ -41,7 +41,7 @@ console.log('Hello,',fullName());
 * the global context of .this is the window in a browser, and globalThis in node.
 
 
-# A  Quick Note About Recusion
+# A  Quick Note About Recursion
 Some facts about recursion:
 * any problem you solve with a for loop you can solve with recursion.
 * every recursive function has a recursive case that causes the function to call itself
@@ -62,3 +62,9 @@ countEvenToTwelve(0);
 
 * `number <= 12` is called the recursive case
 * `number > 12` is refered to as a base case. When a base case is true the function will no longer call itself.
+
+## Definition of Recusrion from Khan Academy
+
+Here is the basic idea behind recursive algorithms:
+
+    To solve a problem, solve a subproblem that is a smaller instance of the same problem, and then use the solution to that smaller instance to solve the original problem.

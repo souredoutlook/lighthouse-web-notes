@@ -1,6 +1,6 @@
 # TCP
 
-## Instructor Vasily Klimkin
+### Instructor: Vasily Klimkin
 
 ## Content:
 
