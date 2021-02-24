@@ -24,4 +24,6 @@ This repository contains all of the notes taken by [Nicholas Meisenheimer](https
   * [Day 5](/Week_3/Day_5)
   * [WE](/Week_3/WE)
 * [Week 4](/Week_4/)
-  *[Day 1](/Week_4/Day_1)
+  * [Day 1](/Week_4/Day_1)
+  * [Day 2](/Week_4/Day_2)
+  * [Day 3](/Week_4/Day_3)
