@@ -1,17 +1,20 @@
 # HTTP
 
 ## HTTP Flow
+
 1. Open a TCP connection
 2. Send an HTTP message
 3. Read a response sent by the server
 
 HTTP messages:
-* 1.1 are human readable
-* 2 are embedded into a binary structure called a frame.
+
+- 1.1 are human readable
+- 2 are embedded into a binary structure called a frame.
 
 Two kinds of message, with unique format:
-* Request
-* Response
+
+- Request
+- Response
 
 ## Request
 
@@ -19,6 +22,7 @@ Method: like GET or POST.. or OPTIONS or HEAD.
 Path: a path to the resource to fetch (path doesn't include protocol, domain, or TCP port)
 Version of Protocol: 1.1 or 2 for example
 Headers: optional that convey additional information for the servers
+
 > or a body for some methods like POST (contains the resources sent)
 
 ## RESPONSE
@@ -27,6 +31,7 @@ Version of Protocol: protocol version
 Status Code: if the request was succesful or not
 Status Message: non authoritative message or short description of the status code
 Headers: like those of request
+
 > or a body containing the fetched response
 
 ## API Based on HTTP
@@ -42,10 +47,11 @@ Focus for now will be on PATH and METHOD of requests. Path says what resource th
 ### Methods
 
 9 HTTP Requests Methods:
-* GET: used to "get" some data from the server
-* POST: usually used to create some new data
-* PUT: generally used for editing existing data on the server
-* DELETE: used to delete some existing data
+
+- GET: used to "get" some data from the server
+- POST: usually used to create some new data
+- PUT: generally used for editing existing data on the server
+- DELETE: used to delete some existing data
 
 ## Paths and URL Structure
 
@@ -59,7 +65,7 @@ Domain: indicates which Web Server is being requested.
 
 Port: Indicates a technical "gate" for accessing resourcesa on the web server. Usually ommitted if the website uses the stand ports (80 for HTTP and 443 for HTTPS)
 
-> Seperator between the scheme and the Authority (Domain & Port) is `://` -- the colon `:` seperates the scheme from the next part of the URL and the `//` indicates the next part of the URL is the authority. Ommitted in cases like `mailto:foobar` where the scheme does us an authority as a component. 
+> Seperator between the scheme and the Authority (Domain & Port) is `://` -- the colon `:` seperates the scheme from the next part of the URL and the `//` indicates the next part of the URL is the authority. Ommitted in cases like `mailto:foobar` where the scheme does us an authority as a component.
 
 Path: `/path/to/myfile.html` the path the resource on the webserver
 
@@ -86,4 +92,4 @@ Will contain some data such as the data the client originally requested. May be 
 
 ### Headers
 
-Programmers can inject extra information into requests and responses called "headers" which is a key:value way of storing data. 
+Programmers can inject extra information into requests and responses called "headers" which is a key:value way of storing data.

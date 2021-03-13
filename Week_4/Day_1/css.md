@@ -3,23 +3,25 @@
 ### Instructor: Dominic Tremblay
 
 ## Content
+
 New Project
 CSS Basics
 Old CSS Style: Floats
 New CSS STyle: Flexbox
 
 ## New Project
-* Front End Project
-* Single-page App
-* Uses HTML, CSS, jQuery
 
-* Will be playing with nice CSS efects (example, shadow on hover, in page warning, character counting)
+- Front End Project
+- Single-page App
+- Uses HTML, CSS, jQuery
 
-* Will learn responsive design
+- Will be playing with nice CSS efects (example, shadow on hover, in page warning, character counting)
 
-* We will be using AJAX as well
+- Will learn responsive design
 
-## What the difference is between TinyApp and Tweeter 
+- We will be using AJAX as well
+
+## What the difference is between TinyApp and Tweeter
 
 TinyApp was a multi-page app that was rendering pages with EJS
 
@@ -35,7 +37,7 @@ Almost every html element can be represented with a box.
 
 We can play with the box model to get desired effect and spacing.
 
-Padding: space between the content and the border of the box. 
+Padding: space between the content and the border of the box.
 
 Border: Width of the border, colour of the border etc.
 
@@ -43,11 +45,11 @@ When there are multiple boxes on the page - the space between boxes is the margi
 
 We can change properties of the box model with the following CSS properties:
 
-* width - relative to the * box-sizing property * (content-box, border-box)
-* height
-* padding
-* border
-* margin
+- width - relative to the _ box-sizing property _ (content-box, border-box)
+- height
+- padding
+- border
+- margin
 
 ```html
 <div class"box">:box:</div>
@@ -74,7 +76,7 @@ There is a [css reference](https://developer.mozilla.org/en-US/docs/Web/CSS/Refe
 
 The margin is always outside of the box - calculating width should be inclusive of padding, content and border.
 
-A content box  sizes based on the content
+A content box sizes based on the content
 
 A border-box sizes the content inclusive of padding and border
 
@@ -82,7 +84,7 @@ A border-box sizes the content inclusive of padding and border
 
 ## Web Layout - Floats
 
-You may hvae to deal with floats with legacy CSS codes. 
+You may hvae to deal with floats with legacy CSS codes.
 
 Before flexboat floats were being used for web layouts
 Element can be floated left or oright
@@ -90,7 +92,7 @@ Floated elements are not part of the
 
 ### Block Level Elements
 
-Take up the whole line. 
+Take up the whole line.
 
 Not all are block (em, spance, strong)
 
@@ -106,9 +108,9 @@ THere is a clearfix hack to be used with this by putting the clearfix class on t
 
 ```css
 .clearfix::after {
-content: '';
-clear: both;
-display: table;
+  content: "";
+  clear: both;
+  display: table;
 }
 ```
 
@@ -140,10 +142,10 @@ The items are expanded to fill the box or shrunk to prevent overflow.
 
 When working with flexbox you need to think in terms of two axes: the main axis and the cross axis. The main axis defined by the flex-direction property, and the cross axis-runs perpendicular to it.
 
-Example: 
-  * row -> make axis is horizontal, cross axis is vertical.
-  * Column -> main axis is vertical, cross axis is horizontal.
+Example:
 
+- row -> make axis is horizontal, cross axis is vertical.
+- Column -> main axis is vertical, cross axis is horizontal.
 
 ### Properties for Child
 
@@ -153,12 +155,12 @@ Example:
 
 `flex-basis: 40%` works differently than grow. grow will fill the space, basis has a limit
 
- 
 ## Solving the CSS Exercise:
 
 [Working through the exercise together](https://gist.github.com/DominicTremblay/83357ef5d5d006a87a5774893bb9addd)
 
 Steps:
+
 1. Seperate fruits and veggies into their own containers
 2. Set the flex-grow properties on both fruit and veggiet containers
 3. Set each container and make them flexboxes
@@ -169,7 +171,7 @@ Steps:
 8. Lower container flex-direction is row
 9. Lower container: justify-content: space-between;
 10. Lower containerAlign items: center;
-10. Strawberry order: -1
+11. Strawberry order: -1
 12. Flex basis: 40% on eggplant
 13. display: flex container on egpplant
 14. justify content: center on eggplant
@@ -187,7 +189,3 @@ Can overide scores with `!important`
 score is computers 0-0-0-0 but spoken as 1-0-0-0 "1 thousand" or 0-1-2-0 'one hundred twenty"
 
 Pseudo class is considered like class - only active when a certain action happens.
-
-
-
-

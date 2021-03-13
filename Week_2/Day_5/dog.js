@@ -1,14 +1,14 @@
 const dog = {
   sound: "woof",
-  speak: function() {
+  speak: function () {
     console.log(this.sound);
   },
-  teachMeSomething: function() {
+  teachMeSomething: function () {
     if (dog === this) {
-      console.log('dog === this');
+      console.log("dog === this");
     }
     this.speak();
-  }
+  },
 };
 
 dog.teachMeSomething();

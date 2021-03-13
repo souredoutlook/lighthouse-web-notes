@@ -1,75 +1,89 @@
 # Automated Testing
+
 ## Instructor: Dominic Tremblay
+
 > "Not sure if I wrote good code or a shitty unit test."
+
 ## Content
 
-* Automated Testing
-* TestDriven Development
-* NodeJS Assert
-* BBD
-* Mocha && Chai
+- Automated Testing
+- TestDriven Development
+- NodeJS Assert
+- BBD
+- Mocha && Chai
 
 ## Automated Testing
 
 Why?
 
-* To save time on debugging.
-* To make sure that the code does what it intends to.
-* Works as documentation for code too (to show how the code SHOULD work.)
-* It is hard to keep an entire program in your head (as a mental model.)
-* Forces us to make more modular code.
+- To save time on debugging.
+- To make sure that the code does what it intends to.
+- Works as documentation for code too (to show how the code SHOULD work.)
+- It is hard to keep an entire program in your head (as a mental model.)
+- Forces us to make more modular code.
 
-#### Main Goal: 
+#### Main Goal:
+
 To improve over all code quality.
 
-#### Other Benefits: 
-* Save time compared to manual testing.
-* Easy to see if new code is breaking anything
-* Forces us to think about bugs up front.
+#### Other Benefits:
+
+- Save time compared to manual testing.
+- Easy to see if new code is breaking anything
+- Forces us to think about bugs up front.
 
 > Can be integrated into build workflow. - Dominic Tremblay
 
 #### Idea:
+
 When working on branch: writing tests that can be run automatically to decide whether to approve or decline a pull request.
 
 ## Test Driven Development
+
 What is TDD?
-* Relise on test to DRIVE development.
-* Write the test first and the write the code to make the test pass.
-  * Write a test, which will fail (because no code written yet.)
-  * Write the minimal amount of code to make the test pass.
-  * Then refactor the code to make it more readable and maintainable.
+
+- Relise on test to DRIVE development.
+- Write the test first and the write the code to make the test pass.
+  - Write a test, which will fail (because no code written yet.)
+  - Write the minimal amount of code to make the test pass.
+  - Then refactor the code to make it more readable and maintainable.
 
 > Building the app is maybe 20% of the work - maintaining and managing the app is 80% of the work.
 
 ## Demo
+
 1. NodeJS Assert
 2. Mocha
 3. Chai
 
 ```javascript
-const numberOfVowels = (str) => {
-
-}
+const numberOfVowels = (str) => {};
 
 // write the assertion using the built in console.assert
-console.assert(numberOfVowels('tomato') === 3, "it should have 3 vowels with tomato");
+console.assert(
+  numberOfVowels("tomato") === 3,
+  "it should have 3 vowels with tomato"
+);
 ```
 
-TDD requires ensuring the test fails when the code is empty. 
+TDD requires ensuring the test fails when the code is empty.
 
 Then add the minimal amount of code to make the test pass, in the case above: `return 3`
 
 Then we would refactor to make the code continues to work under different conitions, like below:
 
 ```javascript
-const numberOfVowels = (str) => {
-
-}
+const numberOfVowels = (str) => {};
 
 // write the assertion using the built in console.assert
-console.assert(numberOfVowels('tomato') === 3, "it should have 3 vowels with 'tomato'");
-console.assert(numberOfVowels('sweet potato') === 5, "it should have 5 with 'sweet potato'")
+console.assert(
+  numberOfVowels("tomato") === 3,
+  "it should have 3 vowels with 'tomato'"
+);
+console.assert(
+  numberOfVowels("sweet potato") === 5,
+  "it should have 5 with 'sweet potato'"
+);
 ```
 
 Which would fail - so we refactor our code to make it pass. etc. etc.
@@ -95,23 +109,25 @@ We can use Try Catch to handle the errors more gracefully.
 ```javascript
 try {
   // What we need to execute
-} catch (error){
+} catch (error) {
   // Handle the error here ex.
-  console.log('this is a message about an error')
+  console.log("this is a message about an error");
 }
 ```
 
 the `catch (error)` clause is catching an object (error) that is populated when error is thrown. We can use the properties of the error to give us more information about what the error is. This can be proven using `console.log(error)`
 
 ```javascript
-console.log(`${error.name} - expected: ${error.expected} actual: ${error.actual}`)
+console.log(
+  `${error.name} - expected: ${error.expected} actual: ${error.actual}`
+);
 ```
 
 ## In Practice: Automated Testing
 
 Using `module.exports = functionName` (it is very inmportant to omit the call) to make the function requirable in your test folder.
 
-The benefit of testing in this way is that is seperates your code and test code. 
+The benefit of testing in this way is that is seperates your code and test code.
 
 > Do not use import even though vsCode wants it - this can happen if you are on very recent version of Node. Require is the js standard for now. - Dominic Tremblay
 
@@ -127,22 +143,21 @@ Mocha allows us to have better assertion messaging and more complex cases than s
 
 Mocha testing uses describe/context blocks and it blocks. It blocks contain the test cases.
 
-
 Using [chai assertion](https://devhints.io/chai) library instead of NodeJS assertion library lets us do BBD as well as TDD.
 
 ### BBB
 
-* BBD describes the behaviour of the system from the customers point of view.
+- BBD describes the behaviour of the system from the customers point of view.
 
-* Based on users' stories
+- Based on users' stories
 
-* Uses a more natural lanaguage that everyone can understand.
+- Uses a more natural lanaguage that everyone can understand.
 
 ## Expect
 
 We can require expect with const expect = require(chai).expect()
 
-There is also .should()  etc.
+There is also .should() etc.
 
 ## Testing With Chai
 
@@ -152,10 +167,10 @@ A tip for requiring multiple functions from a module in a test file:
 
 ```javascript
 //test/pet_adoption_test.js
-const {findPetByName, addForAdoption} = require ('../pet_adoption')
+const { findPetByName, addForAdoption } = require("../pet_adoption");
 
 //pet_adoption.js
-module.exports = {findPetByName, addForAdoption}
+module.exports = { findPetByName, addForAdoption };
 ```
 
 The chai assertion library allows us to make assertions that are much morelike human language - which is a component of BBD. See below:
@@ -204,4 +219,3 @@ describe('adoptPet',()=>{
   })
 })
 ```
-

@@ -3,11 +3,12 @@
 ### Instructor: Dominic Tremblay
 
 ## Content
-* What is AJAX
-* Traditional Model vs AJAX
-* Vanill Ajax
-* Ajax with Jquery
-* CORS
+
+- What is AJAX
+- Traditional Model vs AJAX
+- Vanill Ajax
+- Ajax with Jquery
+- CORS
 
 ## What is AJAX
 
@@ -23,36 +24,38 @@ Unlike a regular HTTP request, the web server only sends back the DATA
 Basically: AJAX is a technique allowing the user interface to update itself WITHOUT RELOADING the whole document.
 
 History:
-* Microsoft added a little-known function named XMLHttpRequest to IE5
-* In 2006 the W3 published a specification for the XMLHttpRequest object
-* The XMLHttpRequest object is used to retrieve data asynchronously.
-* Initially, it was mainly using XML, but today it can use any other formats such as JSON.
+
+- Microsoft added a little-known function named XMLHttpRequest to IE5
+- In 2006 the W3 published a specification for the XMLHttpRequest object
+- The XMLHttpRequest object is used to retrieve data asynchronously.
+- Initially, it was mainly using XML, but today it can use any other formats such as JSON.
 
 ### Vanilla AJAX
 
 ```javascript
 const getBiography = function (url) {
   const xhr = new XMLHttpRequest();
-  xhr.open('GET', url, true);
+  xhr.open("GET", url, true);
   xhr.send();
-  xhr.addEventListener("load", function(event) {
+  xhr.addEventListener("load", function (event) {
     console.log(JSON.parse(this.response));
-  })
-}
+  });
+};
 
-const frm = document.getElementById('get-bio-frm');
+const frm = document.getElementById("get-bio-frm");
 
-frm.addEventListener("submit", (event)=>{
+frm.addEventListener("submit", (event) => {
   event.preventDefault();
   getBiograpy(someURL); // om this example someURL is actualy a locally hosted API
-})
+});
 ```
 
->Very important that we understand HOW the data is structured if we are going to try to extract information from it.
+> Very important that we understand HOW the data is structured if we are going to try to extract information from it.
 
 ## AJAX with jQuery
 
 An AJAX 'GET' request:
+
 ```javascript
 const createMediaElement = function(obj) {
   return `a template string written in HTML syntx`;
@@ -105,19 +108,20 @@ $(document).ready(function() {
 ```
 
 > Benefit of using AJAX vs. the fetch() API - for this application not much of an advantage. fetch() is another way to do it that is built into the browser.
+
 ### Pro's and Con's
 
 Pro's of AJAX: Improve user experience. Apps that require a lot of clicking means the classical model is probably not the best. No page reloads - faster renders and improved response times. Reduced network load.
 
 Cons of AJAX: Creating dynamic content can be tricky. Async programming patterns are complex to code. Requires JS and XMLHTTPRequest support. (Most users should have no problem with this)
 
-OTHER BIG CON: you lose your browser history. Browsers do provide a history API that allows you to [programmaticaly](https://css-tricks.com/using-the-html5-history-api) interact with the browser history. 
+OTHER BIG CON: you lose your browser history. Browsers do provide a history API that allows you to [programmaticaly](https://css-tricks.com/using-the-html5-history-api) interact with the browser history.
 
 ### CORS
 
-* For security reasons, browsers restrict cross-origin HTTP requests iniatated from scripts.
-* Ajax requests follow same-origin policy.
-* A web application using those APIs can only request resources from the same origin the application was loaded from unless the response from other origins inccludes the right CORS headers.
+- For security reasons, browsers restrict cross-origin HTTP requests iniatated from scripts.
+- Ajax requests follow same-origin policy.
+- A web application using those APIs can only request resources from the same origin the application was loaded from unless the response from other origins inccludes the right CORS headers.
 
 To make cross-origin requests work - we need to tell our server that we can accept requests from another server.
 
@@ -139,5 +143,3 @@ Use case we will run into running seperate servers on different ports:
 API is running on one port. Front-end is running on another port. React is like this. We can either use CORS or write a proxy.
 
 If you use API on the frontend (like tvmaze.com) then you need to configure things to allow the users of the api to make CORS requests.
-
-

@@ -16,13 +16,14 @@ class Student extends Person {
   enroll(cohort) {
     this.cohort = cohort;
   }
-   //need a bit more info than provided just in Person.bio()
+  //need a bit more info than provided just in Person.bio()
   bio() {
-    return `I'm a student at Lighthouse Labs (aka Labber)${this.cohort === undefined ? "." : ` in the ${this.cohort} cohort.`} ${super.bio()}`;
+    return `I'm a student at Lighthouse Labs (aka Labber)${
+      this.cohort === undefined ? "." : ` in the ${this.cohort} cohort.`
+    } ${super.bio()}`;
     //specifacally done with a template literal because person.bio() also returns a string.
   }
 }
-
 
 class Mentor extends Person {
   // specific to mentors
@@ -41,7 +42,7 @@ class Mentor extends Person {
   }
 }
 
-let nickMeis = new Student("Nicholas Meisenheimer","Likes the boots");
+let nickMeis = new Student("Nicholas Meisenheimer", "Likes the boots");
 
 nickMeis.enroll("February 1st");
 

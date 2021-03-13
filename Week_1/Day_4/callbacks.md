@@ -4,62 +4,68 @@
 
 ## Content
 
-* Functions - What? Where? Why? When? How?
-* Callbacks
-* Arrow Functions
-* .forEach()
-* .map()
+- Functions - What? Where? Why? When? How?
+- Callbacks
+- Arrow Functions
+- .forEach()
+- .map()
 
 ## Functions
 
 What is a function? Why even use functions? What's the point?
-* DRY
-* Groups a bunch of code
-* Packs functionality
-* Performs one specific task
-* Can be stored in a variable
+
+- DRY
+- Groups a bunch of code
+- Packs functionality
+- Performs one specific task
+- Can be stored in a variable
 
 Typical variable declarations: `let/const/var variableName = variable;`
 
-Function syntax: 
+Function syntax:
+
 ```javascript
-const functionName = function(fruitName, numOfFruits) {
- console.log('Here is my number of fruits:');
- console.log(fruitname);
- console.log(numOfFruits);
-}
+const functionName = function (fruitName, numOfFruits) {
+  console.log("Here is my number of fruits:");
+  console.log(fruitname);
+  console.log(numOfFruits);
+};
 ```
+
 ![alt text](assets/functions.png "Functions are just like childrens toys! 🙃")
 
 Functions are called in this way:
 
 ```javascript
-const fruit = 'apple';
+const fruit = "apple";
 const number = 1;
-functionName('banana', 99); //this works
+functionName("banana", 99); //this works
 functionName(fruit, number); //this works too
 ```
 
 ## Callbacks
+
 Because functions are variables they can also be passed as arguments:
 
 ```javascript
-const prettyFruitPrint = function() { // a function
-}
+const prettyFruitPrint = function () {
+  // a function
+};
 
-const functionName = function(fruitName, numOfFruits, func) {
- console.log('Here is my number of fruits:');
- console.log(fruitname);
- console.log(numOfFruits);
- console.log("Here is my function", func);
-}
+const functionName = function (fruitName, numOfFruits, func) {
+  console.log("Here is my number of fruits:");
+  console.log(fruitname);
+  console.log(numOfFruits);
+  console.log("Here is my function", func);
+};
 
 functionName(fruit, number, prettyPrintFruit()); //this is an example of using a callback
 ```
 
->Passing functions like this is one of the biggest things node.js has to offer." - Vasily
+> Passing functions like this is one of the biggest things node.js has to offer." - Vasily
 
 Callback functions can also take arguments as well:
+
 ```javascript
 const prettyFruitPrint = function(f, n) { // a function
 console.log('-----------------');
@@ -79,27 +85,29 @@ In this case numFruit is a high-order function and prettyFruitPink is a callback
 ## Anonymous Functions
 
 In the same way we can declare arguments like `'banana'` and `99` in-line, we can also declare the function argument in-line:
+
 ```javascript
-const numFruit = function(fruitName, numOfFruits, func) {
- func(fruitName,numOfFruits);
+const numFruit = function (fruitName, numOfFruits, func) {
+  func(fruitName, numOfFruits);
 };
 
-numFruit('banana', 99, function(a,b) {
-  console.log("not a very pretty print....")
-  console.log(a,b)
+numFruit("banana", 99, function (a, b) {
+  console.log("not a very pretty print....");
+  console.log(a, b);
 });
 ```
 
 Declaring a function in this way is called an anonymous function, it doesn't have name but it's type is Function.
 
-> Why would we want to do this? 
-* DRY
-* Maximum Reusability
-* Async (will cover next week)
+> Why would we want to do this?
+
+- DRY
+- Maximum Reusability
+- Async (will cover next week)
 
 ## Arrow Functions
 
-The example below contains two functions, one is declared `= function`. The other uses arrow function notation `()=>`: 
+The example below contains two functions, one is declared `= function`. The other uses arrow function notation `()=>`:
 
 ```javascript
 const arr = [1,'two',3,'four',5,'six,'7,'eight',9,'ten'];
@@ -129,7 +137,7 @@ const printOnlyStrings = (array) => {
 printOnlyStrings(arr) // expect two,four,six,eight,ten
 ```
 
->Arrow functions have different scoping properties that will be covered later.
+> Arrow functions have different scoping properties that will be covered later.
 
 The problems above could be solved in a dryer way using a an anonymous arrow function as our argument for callback:
 
@@ -154,19 +162,20 @@ printOnly(arr, (v) =>{
 ```
 
 ## .forEach()
+
 The combination of callbacks and anonymous arrow functions can be quite powerful as seen below:
 
 ```javascript
-
-const forEvery = function(array,cb) {
-  for (let val of array){ //loops over array
+const forEvery = function (array, cb) {
+  for (let val of array) {
+    //loops over array
     cb(val); //does whatever our callback says to do with val
   }
 };
 
 let sumOfNumbers = 0;
-forEvery(arr, (v)=>{
-  if(typeof v === "number"){
+forEvery(arr, (v) => {
+  if (typeof v === "number") {
     sumOfNumbers += v;
   }
 }); //expect 25
@@ -179,7 +188,7 @@ The functionality of `forEvery` above already exists in javaScript as [Array.pro
 One way to take in an array and return a modified version of it (some experssion is used on all elements of the array) is shown below:
 
 ```javascript
-let input = [1,2,3,4,5];
+let input = [1, 2, 3, 4, 5];
 
 const result = [];
 
@@ -194,12 +203,13 @@ console.log(result); // expect 2,4,6,8,10
 This can be achieved with the .map() method:
 
 ```javascript
-let input = [1,2,3,4,5];
+let input = [1, 2, 3, 4, 5];
 
-const result = input.map((val)=>{
+const result = input.map((val) => {
   return val * 2;
 });
 
 console.log(result); // expect 2,4,6,8,10
 ```
+
 The .map() method takes a callback function, this is operation that is being applied to each element of the array.

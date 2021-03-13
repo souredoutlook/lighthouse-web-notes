@@ -4,12 +4,12 @@ Character encoding helps not plain English text present with the appropriate sty
 
 ## What is it?
 
-* Words and scentences are created from characters. 
-* Characters are grouped into a character set or repetoire
-* Each character is associated with a number called a code point
-* Characters are stored as one or more bytes
-* If characters are stored in a code (Cipher) 
-  * encoding provides a key to crack the code.
+- Words and scentences are created from characters.
+- Characters are grouped into a character set or repetoire
+- Each character is associated with a number called a code point
+- Characters are stored as one or more bytes
+- If characters are stored in a code (Cipher)
+  - encoding provides a key to crack the code.
 
 ## How does it work?
 
@@ -54,6 +54,3 @@ Eight 0's in a row presented a problem for older systems which interpreted that 
 UTF-8 is also backwards compatible. By using header bits to describe the byte length of the encoded character they never have to send 8 0's. See this image:
 
 ![alttext](assets/UTF8.png "back of the napkin or.... dot matrix printer paper?")
-
-
-

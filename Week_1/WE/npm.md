@@ -1,6 +1,6 @@
 # Introduction to Modules
 
-So far we've copy/pasted code around because we don't yet know how to share code between files. This is a pain. The code is [WET  instead of DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself#DRY_vs_WET_solutions)
+So far we've copy/pasted code around because we don't yet know how to share code between files. This is a pain. The code is [WET instead of DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself#DRY_vs_WET_solutions)
 
 Seperating code into multiple files so that we don't repeat ourselves uses something called modules.
 
@@ -22,7 +22,7 @@ Module {
   filename: '/Users/superman/codes/moduleCheck.js',
   loaded: false,
   children: [],
-  paths: [ ... ] 
+  paths: [ ... ]
 }
 ```
 
@@ -79,6 +79,7 @@ Virtually all Node.js projects ahve a file called package.json - might look simi
   }
 }
 ```
+
 Include basic attributes such as the project's name, description and author.
 
 The scripts portion allows us to run command using an alias for instance:
@@ -93,5 +94,4 @@ Dependencies are the packages that need to be installed for the project to run p
 
 There is also a [package-lock.json](https://www.google.com/search?q=npm+docs+package+lock+json&oq=npm+docs+package+lock+json) file that lists **all the details** of our projects dependencies. It should be checked into git along with package.json (whereas the node_modules directory is gitignored)
 
-> **Editing the package-lock file directly should be avoided, we modify it indirectly with commands like npm install
-
+> \*\*Editing the package-lock file directly should be avoided, we modify it indirectly with commands like npm install

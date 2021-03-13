@@ -13,7 +13,7 @@ I/O operations are an example of a type of operation that is time consuming. I/O
 ```javascript
 const fs = require("fs");
 
-console.log('BEFORE writeFile call');
+console.log("BEFORE writeFile call");
 
 fs.writeFile("./test_async.txt", "h3ll0 file!\n", (error) => {
   if (error) {
@@ -25,8 +25,7 @@ fs.writeFile("./test_async.txt", "h3ll0 file!\n", (error) => {
   console.log("Successfully wrote to file");
 });
 
-console.log('AFTER writeFile call');
-
+console.log("AFTER writeFile call");
 ```
 
 You might expect something like: "BEFORE" then "SUCCESS" then "AFTER". However writing the file takes much more time than logging to the console so we actually see... "BEFORE" "AFTER" "SUCCESS"

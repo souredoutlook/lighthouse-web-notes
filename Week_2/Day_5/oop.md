@@ -1,25 +1,28 @@
 # OOP I Did it Again
 
 Examples of OOP Languages:
-* Java
-* C++
-* Python
-* Ruby
+
+- Java
+- C++
+- Python
+- Ruby
 
 Examples of Functional Programming Languages:
-* Haskell
-* Erlang
-* Clojure
-* Common Lisp
+
+- Haskell
+- Erlang
+- Clojure
+- Common Lisp
 
 Javascript is based on a functional paradigm but ES6 added more OOP features. This can create confusion amongst the commmunity but creates an opportunity to work with OOP in a "more evolutionary way"
 
 Some common facts about OOP:
-* software development "paradigm" (i.e. not syntax, not lanaguage)
-* popular way to solve code organization, re-use and modularity.
-* mastering OO is essential due to is ubiquity.
-* Javascript is not strictly OOP unlike Ruby and Java
-* Functional programming </> OOP (they are different paradigms -> Javascript is mainly FP)
+
+- software development "paradigm" (i.e. not syntax, not lanaguage)
+- popular way to solve code organization, re-use and modularity.
+- mastering OO is essential due to is ubiquity.
+- Javascript is not strictly OOP unlike Ruby and Java
+- Functional programming </> OOP (they are different paradigms -> Javascript is mainly FP)
 
 ## Object in OOP
 
@@ -29,16 +32,17 @@ In OOP we want to group all functions and variables that relate to "dogs" in a d
 const dog = {
   sound: "woof",
   dogBreed: "shih tzu",
-  speak: function() {
+  speak: function () {
     console.log(`${this.dogBreed} says ${this.dogSound}`);
-  }
+  },
 };
 ```
 
-### Object Recap 
->An object is a collection of key/value pairs known as properties.
+### Object Recap
 
->An object's little bundle of information is also known as a state - the properties can represent the state of an object. In this case the objects "sound" is woof and the "breed" is shih tzu. This is the objects state.
+> An object is a collection of key/value pairs known as properties.
+
+> An object's little bundle of information is also known as a state - the properties can represent the state of an object. In this case the objects "sound" is woof and the "breed" is shih tzu. This is the objects state.
 
 > When a property's value is a function we cann it a method. This method is also called the object's behaviour.
 
@@ -53,7 +57,7 @@ When you use `this` inside a method it refers to the object.
 ## Back to OO
 
 OO bundles (groups) together related state and logic into an object that can be passed around as a single entity.
- 
+
 Primary goals: reduce duplicated code, breaking code up into sensibly-divided units.
 
 Ultimately about making more complex things simpler to read, write and maintain.
@@ -62,7 +66,7 @@ Ultimately about making more complex things simpler to read, write and maintain.
 
 > Abstraction is a technique for arranging complexity of computer systems. It works by establishing a level of complexity on which a person interacts with the system, supressing the more complex details below the current level.
 
-Private v public : in some languages properties can be made private whic means that they can't be accessed outside of the class they're created in. In javascript there is no way of making something private but if we add an _ to the start of a property name other develoeprs will know that they shouldn't access it directly.
+Private v public : in some languages properties can be made private whic means that they can't be accessed outside of the class they're created in. In javascript there is no way of making something private but if we add an \_ to the start of a property name other develoeprs will know that they shouldn't access it directly.
 
 ### Single Responsibility Principle
 

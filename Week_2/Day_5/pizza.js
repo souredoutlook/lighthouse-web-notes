@@ -1,5 +1,4 @@
 class Pizza {
-
   constructor() {
     this.toppings = ["cheese"];
   }
@@ -22,14 +21,13 @@ class Pizza {
   }
 
   set size(size) {
-    if (size === 's' || size === 'm' || size === 'l') {
+    if (size === "s" || size === "m" || size === "l") {
       this._size = size; ///see what we did there? 0.o
     }
   }
-  
 }
 
-let pizza1 = new Pizza;
+let pizza1 = new Pizza();
 
 console.log(pizza1);
 
@@ -37,7 +35,7 @@ pizza1.addTopping("anchovies"); // yuck
 
 console.log(pizza1);
 
-pizza1.burnt()
+pizza1.burnt();
 
 console.log(pizza1);
 

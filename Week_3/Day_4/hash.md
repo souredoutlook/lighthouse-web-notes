@@ -25,17 +25,17 @@ bCrypt lets us increase the iteration count of the hash function so we can scale
 
 ```javascript
 //...
-const bcrypt = require('bcrypt');
+const bcrypt = require("bcrypt");
 //...
 const hash = bcrypt.hashSync(myPlaintextPassword, saltRounds);
-if (brcrypt.compareSync(myPlaintextPassword, hash)) { 
-  console.log("Success!")
+if (brcrypt.compareSync(myPlaintextPassword, hash)) {
+  console.log("Success!");
 }
 ```
 
 ## Why not just hash the cookie?
 
-Hashing is irreversible. 
+Hashing is irreversible.
 
 We would also need access to the userid that was hashed to make the cookie each time which is itself a problem because we determine the userid dynamically whem the cookie comes with a request.
 
@@ -46,12 +46,14 @@ So we will use encryption.
 ## cookie-session
 
 ```javascript
-const cookieSession = require('cookie-sesion') //middleware that replaces cookie parser
+const cookieSession = require("cookie-sesion"); //middleware that replaces cookie parser
 
-app.use(cookieSession({
-  name: 'session',
-  keys: [key1,key2], //keys can be different
-}))
+app.use(
+  cookieSession({
+    name: "session",
+    keys: [key1, key2], //keys can be different
+  })
+);
 //replace res.cookie with req.session['user_id'] = userID.
 //res.clearCookie doesnt work need .session['user_id'] = null
 ```
@@ -66,36 +68,36 @@ HTTPS is a way around this MITM type attack.
 
 ## REST
 
-* Representational State Transfer
-* Resource based routes convention (The key abstraction of information in REST )
+- Representational State Transfer
+- Resource based routes convention (The key abstraction of information in REST )
 
 > Rest exercise in the lecture notes.
 
 ## Routes
 
-* Not rest necessarily but when organizing routes in a server start with login/authentication at the top, followed by CRUD operations. Try to put get and post routes for the same endpoint near each other.
-* Eventually when routes get complex enough routes will be moved into a seperate /routes folder organized by resource i.e. quotes, comments, authentication
+- Not rest necessarily but when organizing routes in a server start with login/authentication at the top, followed by CRUD operations. Try to put get and post routes for the same endpoint near each other.
+- Eventually when routes get complex enough routes will be moved into a seperate /routes folder organized by resource i.e. quotes, comments, authentication
 
 ## Middleware
 
-When we get the request and before we send the response we can interact with the objects in the middle with middleware. 
+When we get the request and before we send the response we can interact with the objects in the middle with middleware.
 
 Examples: Incoming Request => body parser => cookie-parser/cookie-session => response
 
 ## Creating a Middleware
 
 ```javascript
-const getCurrentUser = (req,res,next)=> {
+const getCurrentUser = (req, res, next) => {
   // have access to req.session
 
-  const userID = req.session['user_id']; //extracting user id from the cookies
+  const userID = req.session["user_id"]; //extracting user id from the cookies
 
   const loggedInUser = usersDb[userId];
 
   req.currentUser = loggedInUser;
 
   next();
-}
+};
 
 app.use(getCurrentUser());
 

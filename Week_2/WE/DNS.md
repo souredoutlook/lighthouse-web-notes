@@ -4,9 +4,9 @@ DNS Stands for Domain Name System
 
 One of the most important and overlooked parts of the internet.
 
-DNS Resolution: A URL is essentially an *alias* for an IP address
+DNS Resolution: A URL is essentially an _alias_ for an IP address
 
-> there is a . at the end of the domain name that we never see. 
+> there is a . at the end of the domain name that we never see.
 
 The end dot represents the root of the internet namespace
 
@@ -42,7 +42,7 @@ Azure DNS
 
 ## Command Line Tool Dig
 
->When tracing is enabled, `dig` makes iterative queries to resolve the name being looked up. It will follow referrals from the root servers, showing the answer from each server that was used to resolve the lookup.
+> When tracing is enabled, `dig` makes iterative queries to resolve the name being looked up. It will follow referrals from the root servers, showing the answer from each server that was used to resolve the lookup.
 
 example code:
 

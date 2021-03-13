@@ -1,15 +1,15 @@
 ## How JavaScript Works
 
 ### v8js:
-* Heap - the implementation of ECMA Script
-* The Call Stack - a data structure: what function am I working through, and where do I return to
-  * You can put things on top, and take them off the top.
-  * A printout of the call stack on a thrown error in the browser is called a stack trace.
-  * Blocking comes down to implementation - somet things are just slow. Blocking is an issue in the browser especially.
-* WebAPI - DOM, ajax, setTimeout, XHR,
-* Event Loop - "if stack is clear - push the first item in the task queue into the stack"
-> Don't block the event loop: make sure the stack clears.
 
+- Heap - the implementation of ECMA Script
+- The Call Stack - a data structure: what function am I working through, and where do I return to
+  - You can put things on top, and take them off the top.
+  - A printout of the call stack on a thrown error in the browser is called a stack trace.
+  - Blocking comes down to implementation - somet things are just slow. Blocking is an issue in the browser especially.
+- WebAPI - DOM, ajax, setTimeout, XHR,
+- Event Loop - "if stack is clear - push the first item in the task queue into the stack"
+  > Don't block the event loop: make sure the stack clears.
 
 ## Promises
 
@@ -26,6 +26,7 @@ Events can fire many times but a promise can only resolve once.
 A promise is almost like try catch wrapper around async work.
 
 Syntax
+
 ```javascript
 var promise = new Promise(function(resolve[, reject]) {
   var value = doSomething();
