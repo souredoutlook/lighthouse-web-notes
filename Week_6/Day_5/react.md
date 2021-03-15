@@ -86,3 +86,31 @@ Identify the minimal state needed to represent your application
 1. Is it passed in from a parent via props. If so - it probably isn't state
 2. Does it remain unchanged over time? If so - it probably isn't state
 3. Can you compute it based on any other state or props in your component? If so it isn't state
+
+## Babel and Webpack
+
+Babel will convert JSX into backwards compatible javascript
+
+Webpack will bundle our modules using the ES6 import keywords because this is not supported by all browsers natively yet
+
+## Interview Scheduler
+
+### Storybook
+  An open source tool for building components in isolation.
+  No data. Business logic or unfinished apis
+  Hard to reach use cases
+
+### Webpack Dev Server
+  Provides live reloading
+  Instant feedback
+  When a change is observed the server uses webpack to update the bundle
+  * should only be used for development a production bundle should be built when deploying the application to the public
+
+### JEST test runner 
+  Starts in watch mode
+  When changes are detected the tests will be run
+  We can run selected tests at any point by pressing enter
+
+### Cyprus
+  Open source test runner of the modern web
+  
